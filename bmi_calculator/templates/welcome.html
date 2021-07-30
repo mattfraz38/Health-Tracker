@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}BMI Calculator{% endblock%}
+
+{% block content %}
+  <h1>Welcome to BMI Calculator</h1>
+
+  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero inventore facere eveniet vitae eius natus distinctio explicabo eligendi architecto quod labore sed voluptatibus fugiat necessitatibus, consequuntur nihil dicta voluptatem delectus?</p>
+
+  <div>
+    <a href="{{ url_for('views.bmiImperialCalc') }}">Imperial</a>
+    <a href="{{ url_for('views.bmiMetricCalc') }}">Metric</a>
+  </div>
+{% endblock %}

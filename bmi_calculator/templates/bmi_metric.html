@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}BMI Metric{% endblock %}
+
+{% block content %}
+<h1>BMI Calculator - Metric</h1>
+
+<a href="{{ url_for('views.bmiImperialCalc') }}">Imperial</a>
+
+<form method="POST" action="/bmi_metric">
+  <div>
+    <label for="height-cm">Centimeters</label>
+    <input id="height-cm" name="height-cm" type="text" required>
+  </div>
+
+  <div>
+    <label for="weight-kgs">Kilograms</label>
+    <input id="weight-kgs" name="weight-kgs" type="text" required>
+  </div>
+
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+{% if heightCm and weightKgs %}
+  <p>You are {{ heightCm }} cm tall</p>
+  <p>Your BMI is {{ bmiMetric }}</p>
+{% endif %}
+{% endblock %}

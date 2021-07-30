@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}BMI Checker{% endblock %}
+{% block title %}BMI Imperial{% endblock %}
 
 {% block content %}
-<h1>BMI Calculator</h1>
+<h1>BMI Calculator - Imperial</h1>
 
-<form method="POST" action="/">
+<a href="{{ url_for('views.bmiMetricCalc') }}">Metric</a>
+
+<form method="POST" action="/bmi_imperial">
   <div>
     <label for="height-feet">Feet</label>
     <input id="height-feet" name="height-feet" type="text" required>
@@ -24,7 +26,7 @@
   </div>
 </form>
 
-{% if height %}
+{% if height and weight %}
 <div>
   <!-- <p>You are {{ height }} feet tall and you weight {{ weight }}</p> -->
   <p>You are {{ height }} in. tall</p>
